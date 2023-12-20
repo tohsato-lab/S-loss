@@ -33,8 +33,6 @@ class Configs:
 
         # == backbone model params ==
         self.backbone = "efficientnetv2_rw_m"  # "resnet101" #"efficientnetv2_rw_m" # "timm-efficientnet-b8"
-        self.dim = 1024
-        self.pred_dim = 512
         self.pretrain_pretrained = True
 
         # ====== segmentation params ======
@@ -54,20 +52,17 @@ class Configs:
         self.Segmentation_Self_pseudo_class_Train = 1001
         self.now_epoch = 0
         self.Segmentation_Self_pseudo_pos_Pos = 0.16
-        self.Segmentation_Self_pseudo_pos_Neg = 0.45
         self.label_Norm_eta = 0.05
 
         self.save_folder_name = f'{self.Segmentation_MODEL_NAME}_V_{self.Segmentation_Version}'
         self.Log_Folder = os.path.join(self.Homepath, "outputs", "Segmentation_result")
         self.Log_ViewFolder = os.path.join(self.Log_Folder, self.save_folder_name, "view")
-        # self.Log_labelImageFolder = os.path.join(self.Log_Folder, f"labels")
+
         if self.mode == None:
            self.set_folders()
 
-        self.Name = f'BTIO : r = 16% re'
-        # self.Name = 'test'
+        self.Name = 'test'
 
     def set_folders(self):
         os.makedirs(self.Log_Folder, exist_ok=True)
         os.makedirs(self.Log_ViewFolder, exist_ok=True)
-        # os.makedirs(self.Log_labelImageFolder, exist_ok=True)

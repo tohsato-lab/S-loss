@@ -83,9 +83,6 @@ def main_loop(configs):
         elif configs.Segmentation_Self_pseudo_Train <= configs.Segmentation_Self_pseudo_class_Train:
             print("通常のセグメンテーション　＋　自己学習 + 疑似ラベルの面積比")
             logs = train_core.train_pseudo_dataset_ckl(configs, model, train_loader, optimizer, criterion_CE, criterion_KL)
-        elif configs.Segmentation_Self_pseudo_class_Train <= epoch:
-            print("通常のセグメンテーション　＋　自己学習 + 疑似ラベルの面積比 + クラスの面積比を利用した対照学習（ネガティブペア）")
-            logs = train_core.train_pseudo_dataset_ckl(configs, model, train_loader, optimizer, criterion_CE, criterion_KL)
         # ==================
 
         # === validation ===
