@@ -1,3 +1,7 @@
+# Unsupervised Domain Adaptation with Structural Loss
+![Overview of the proposed method ](./ProposedMethod.png "Overview of the proposed method")
+
+
 # Project Organization
 
 ```
@@ -45,9 +49,11 @@ If there are any issues with the setup, a solution may be found at the above URL
 ## Create accounts
  + install docker
  + create Wandb account from [here](https://www.wandb.jp/)
-   + copy user name and API key
+   + copy user name and API key (User Settings -> Danger Zone -> API keys)
  + create GitHub account from [here](https://github.co.jp/)
  + create figshare account from [here](https://figshare.com/)
+ + HDF5 viewr feom [here](https://github.com/openssbd/QTBD5Viewer)
+
 
 ## Download code from github
 ```shell
@@ -65,20 +71,13 @@ challenger@hoge:~/ascender $ poetry install
  + wandb setting in docker container
 ``` shell
 challenger@hoge:~/ascender $ poetry run wandb init
-Let's setup this directory for W&B!
+Lets setup this directory for W&B!
 wandb: Logging into wandb.ai. (Learn how to deploy a W&B server locally: https://wandb.me/wandb-server)
 wandb: You can find your API key in your browser here: https://wandb.ai/authorize
 wandb: Paste an API key from your profile and hit enter, or press ctrl+c to quit: {API key} 
-wandb: Which team should we use?
-wandb: (1) {Youre User Name}
-wandb: (2) Manual entry
-wandb: Enter your choice: 1
-wandb: Which project should we use?
-wandb: (1) Create New
-wandb: Enter your choice: 1
-wandb: You chose 'Create New'
+...
 Enter a name for your new project: {Project Name}
-This directory is configured!  Next, track a run:
+
 challenger@hoge:~/ascender $ poetry run wandb init
 ```
 # Downloading datasets
@@ -110,15 +109,16 @@ if __name__ == '__main__':
 ```
  2. Running main.py (Train and Test)
 ```shell
+challenger@hoge:~ $ cd ~/ascender
 challenger@hoge:~/ascender $ poetry run python3 main.py
 ```
 
 ## Running Prediction and Create BD5 dataset
  1. download model weight (hogehoge.pth) from wandb and save in " **models/** " folder
- 2. Edit prediction.py
+ 2. Edit prediction.py 
 ```python
 model = load_model.load_deplaboV3plus(configs=configs)
-model_name = f'model_weight_name'                       # ←here
+model_name = f'model_weight_name'                       # ←here (ex: hogehoge <-"hogehoge.pth")
 model_path = os.path.join(configs.Homepath, "models", model_name + '.pth')
 model.load_state_dict(torch.load(model_path))
 ```
@@ -132,3 +132,7 @@ challenger@hoge:~/ascender $ cd data
 challenger@hoge:~/ascender/data $ poetry run python3 resize.py
 challenger@hoge:~/ascender/data $ poetry run python3 create_h5_split_class_id.py
 ```
+
+# NeuroGT with HDF5 viewr
+
+![show HDF5 file wth viewr](./No.1.png "show HDF5 file wth viewr")
