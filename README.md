@@ -3,28 +3,30 @@
 ```
     ├── .github/           <- Settings for GitHub.
     │
-    ├── data/              <- Datasets and image processing code (data/READ)
+    ├── data/              <- Datasets and image processing code (data Organization  is documented in "data/README.md")
     │
-    ├── environments/       <- 
+    ├── environments/      <- Provision depends on environments.
     │
-    ├── models/            <-
+    ├── models/            <- Pretrained and serialized models.
     │
     ├── notebooks/         <- No use
     │
-    ├── outputs/           <- 
+    ├── outputs/           <- Outputs
     │
-    ├── src/               <- 
+    ├── src/               <- Source code.
     │
     ├── tests/             <- No use
     │
-    ├── .flake8            <-
+    ├── .flake8
     ├── .dockerignore
     ├── .gitignore
-    ├── LICENSE
-    ├── Makefile           <- 使っていない
+    ├── LICENSE            <- Ascender LICENSE
+    ├── Makefile           <- No use
     ├── poetry.lock        <- Lock file. DON'T edit this file manually.
     ├── poetry.toml        <- Setting file for Poetry.
     ├── pyproject.toml     <- Setting file for Project. (Poetry, Black, isort, Mypy)
+    ├── main.py            <- main code (Train and Test)
+    ├── prediction.py      <- Predictin code (Create Prediction images 512x512 pix)
     └── README.md          <- The top-level README for developers.
 
 ```
