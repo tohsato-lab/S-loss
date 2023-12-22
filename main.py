@@ -167,14 +167,13 @@ if __name__ == '__main__':
     CFG = get_args()
     if CFG.wandb_logging:
         run = wandb.init(
-            project="SIGBIO",
+            project="{Project Name}",       # ← here
             config={k: v for k, v in dict(vars(CFG)).items() if '__' not in k},
-            name=f"{CFG.Name}",
-            entity="shyuki65"
+            name=f"{CFG.Name}",             # ← here
+            entity="{User Name}"            # ← here
         )
         wandb.save(os.path.join(CFG.Homepath, 'src', 'train_core.py'))
     main_loop(CFG)
-    # print('あああああ')
 
     if CFG.wandb_logging:
         run.finish()
