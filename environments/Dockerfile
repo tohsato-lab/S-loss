@@ -44,3 +44,6 @@ WORKDIR ${APPLICATION_DIRECTORY}
 COPY --chown=${UID}:${GID} pyproject.toml poetry.lock poetry.toml .
 RUN test ${RUN_POETRY_INSTALL_AT_BUILD_TIME} = "true" && poetry install || echo "skip to run poetry install."
 RUN test ${RUN_POETRY_INSTALL_AT_BUILD_TIME} = "true" && mv ${APPLICATION_DIRECTORY}/.venv ${HOME}/.venv || echo "skip to move .venv."
+
+# isntall imagemagic
+RUN apt install imagemagick

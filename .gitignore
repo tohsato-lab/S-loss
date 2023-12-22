@@ -165,3 +165,7 @@ data/*
 !data/README.md
 !data/create_h5_split_class_id.py
 !data/resize.py
+!data/ImageDataTable.csv
+!data/LabelDataTable.csv
+!data/URLlist.txt
+!data/download_Neurogt.sh

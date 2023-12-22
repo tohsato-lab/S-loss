@@ -82,7 +82,15 @@ This directory is configured!  Next, track a run:
 challenger@hoge:~/ascender $ poetry run wandb init
 ```
 # Downloading datasets
-+ downloading from [here](URL)
++ Download label image and datatables from [here](https://figshare.com/account/home#/projects/190317)
++ Download NeuroGT Images with download_Neurogt.sh
+```shell
+UserNmae@yourPC:S-loss $ cd data
+UserNmae@yourPC:S-loss/data $ bash download_Neurogt.sh
+UserNmae@yourPC:S-loss/data $ bash download_Neurogt.sh
+
+
+```
 
 # Running
 ## Running Train and Test
