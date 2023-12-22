@@ -1,9 +1,9 @@
-## プロジェクトの構成
+# Project Organization
 
 ```
-    ├── .github/           <- 
+    ├── .github/           <- Settings for GitHub.
     │
-    ├── data/              <- 
+    ├── data/              <- Datasets and image processing code (data/READ)
     │
     ├── environments/       <- 
     │
@@ -28,6 +28,11 @@
     └── README.md          <- The top-level README for developers.
 
 ```
+
+## Using template repository
++ https://github.com/cvpaperchallenge/Ascender　\
+If there are any issues with the setup, a solution may be found at the above URL
+
 # PC setting
  - OS:Ubuntu20.04LTS
  - CPU:Intel® Core™ i9-10900 CPU @ 2.80GHz × 20 
